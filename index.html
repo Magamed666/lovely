@@ -130,20 +130,73 @@
                         <div class="col-lg-3">
                             <div class="header-meta-info">
                                 <div class="header-search">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search our store ">
-                                        <button><i class="icon-search"></i></button>
+                                    <form id="searchForm" method="GET">
+                                        <input id="searchInput" type="text" placeholder="Поиск...">
+                                        <button type="submit"><i class="icon-search"></i></button>
                                     </form>
                                 </div>
+                                
+                                <script>
+                                    document.getElementById('searchForm').addEventListener('submit', function(event) {
+                                        event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+                                        
+                                        var searchInput = document.getElementById('searchInput').value; // Получаем значение из поля поиска
+                                        var selectedPage = ""; // Здесь нужно определить, на какую страницу вы хотите перенаправить пользователя
+                                        
+                                        switch (selectedPage) {
+                                            case "О нас":
+                                                this.action = "index.html";
+                                                break;
+                                            case "Цветы":
+                                                this.action = "shop-list.html";
+                                                break;
+                                            case "Мягкие игрушки":
+                                                this.action = "shop-grid-4.html";
+                                                break;
+                                            case "Сладости":
+                                                this.action = "shop-grid-left-sidebar.html";
+                                                break;
+                                            case "Сет 1":
+                                                this.action = "shop-single.html";
+                                                break;
+                                            case "Сет 2":
+                                                this.action = "shop-single-affiliate.html";
+                                                break;
+                                            case "Сет 3":
+                                                this.action = "shop-single-variable.html";
+                                                break;
+                                            case "Сет 4":
+                                                this.action = "shop-single-group.html";
+                                                break;
+                                            case "Избранные":
+                                                this.action = "wishlist.html";
+                                                break;
+                                            case "Оформление заказа":
+                                                this.action = "checkout.html";
+                                                break;
+                                            case "Сет 1":
+                                                this.action = "shop-single.html";
+                                                break;
+                                            case "Сет 2":
+                                                this.action = "shop-single-affiliate.html";
+                                                break;
+                                            default:
+                                                // По умолчанию перенаправляем на страницу поиска
+                                                this.action = "search_results_page.html";
+                                                break;
+                                        }
+                                        
+                                        this.submit(); // Отправляем форму
+                                    });
+                                </script>
+                                
                                 <div class="header-account">
                                     <div class="header-account-list dropdown top-link">
                                         <a href="#" role="button" data-toggle="dropdown"><i class="icon-users"></i></a>
 
                                         <ul class="dropdown-menu ">
                                             <li><a href="#">Доставка</a></li>
-                                            <li><a href="#">Юридическое уведомление</a></li>
                                             <li><a href="#">Безопасная оплата</a></li>
-                                            <li><a href="#">Карта сайта</a></li>
                                             <li><a href="#">О нас</a></li>
                                         </ul>
                                     </div>
