@@ -141,9 +141,8 @@
                                         event.preventDefault(); // Предотвращаем отправку формы по умолчанию
                                         
                                         var searchInput = document.getElementById('searchInput').value; // Получаем значение из поля поиска
-                                        var selectedPage = "searchInput"; // Здесь нужно определить, на какую страницу вы хотите перенаправить пользователя
                                         
-                                        switch (selectedPage) {
+                                        switch (searchInput) {
                                             case "О нас":
                                                 this.action = "index.html";
                                                 break;
@@ -174,12 +173,6 @@
                                             case "Оформление заказа":
                                                 this.action = "checkout.html";
                                                 break;
-                                            case "Сет 1":
-                                                this.action = "shop-single.html";
-                                                break;
-                                            case "Сет 2":
-                                                this.action = "shop-single-affiliate.html";
-                                                break;
                                             default:
                                                 // По умолчанию перенаправляем на страницу поиска
                                                 this.action = "search_results_page.html";
@@ -189,6 +182,7 @@
                                         this.submit(); // Отправляем форму
                                     });
                                 </script>
+                                
                                 
                                 <div class="header-account">
                                     <div class="header-account-list dropdown top-link">
